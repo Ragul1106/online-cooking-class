@@ -1,7 +1,7 @@
 import React from 'react';
 import banner1Image from '../assets/images/banner1.png';
 import bannerImage from '../assets/images/bakkery2.png';
-import enrollNow from '../assets/images/enrollNow.png';
+import enrollNow from '../assets/images/enrollnow.png';
 import text1 from '../assets/images/firsttext.png';
 import cheffimg from '../assets/images/image 3.png';
 
