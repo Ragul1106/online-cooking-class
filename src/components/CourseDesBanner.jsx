@@ -1,9 +1,9 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import banner1Image from '../assets/images/cdbanner1.png';
-import insta from '../assets/images/cdinsta.png';
-import book from '../assets/images/cdbook.png';
-import expertise from '../assets/images/cdexpertise.png';
+import insta from '../assets/images/cdInsta.png';
+import book from '../assets/images/cdBook.png';
+import expertise from '../assets/images/cdExpertise.png';
 
 function CourseDesBanner() {
   const navigate = useNavigate();
