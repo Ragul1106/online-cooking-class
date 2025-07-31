@@ -1,7 +1,10 @@
 import React from 'react';
+import { useNavigate } from "react-router-dom";
 import chefImage from "../assets/images/Group 24.png";
 
 const CookingPromo = () => {
+  const navigate = useNavigate();
+
   return (
     <div className="flex flex-col md:flex-row items-stretch justify-center p-6 md:p-12 gap-6 max-w-6xl mx-auto">
       {/* Left Column */}
@@ -15,7 +18,10 @@ const CookingPromo = () => {
           Celebrated Face In The Indian Cuisine.
         </p>
         <div className="mt-auto">
-          <button className="bg-[#b14444] text-white px-5 py-2 rounded-full font-semibold hover:bg-[#962f2f] transition duration-300">
+          <button
+            onClick={() => navigate("/courses")}
+            className="bg-[#b14444] text-white px-5 py-2 rounded-full font-semibold hover:bg-[#962f2f] transition duration-300"
+          >
             VIEW COURSES
           </button>
         </div>

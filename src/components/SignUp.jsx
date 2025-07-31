@@ -1,11 +1,19 @@
 import React, { useState } from "react";
-import { useNavigate, Link } from "react-router-dom";
+import { useNavigate, Link, useLocation } from "react-router-dom";
 
 const Signup = () => {
-  const [form, setForm] = useState({ name: "", email: "", password: "", mobile: "" });
+  const location = useLocation();
+  const navigate = useNavigate();
+
+  const [form, setForm] = useState({
+    name: "",
+    email: location.state?.email || "",
+    password: location.state?.password || "",
+    mobile: ""
+  });
+
   const [error, setError] = useState("");
   const [showModal, setShowModal] = useState(false);
-  const navigate = useNavigate();
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -25,12 +33,12 @@ const Signup = () => {
 
     users.push(form);
     localStorage.setItem("users", JSON.stringify(users));
+    localStorage.setItem("loggedInUser", JSON.stringify(form));
 
-    // Show modal and redirect
     setShowModal(true);
     setTimeout(() => {
       setShowModal(false);
-      navigate("/login");
+      navigate("/"); // Auto-redirect to homepage
     }, 2000);
   };
 
@@ -40,8 +48,7 @@ const Signup = () => {
   };
 
   return (
-    <div className="bg-[#FFF5E1] min-h-screen flex items-center justify-center">
-      {/*  Success Modal */}
+    <div className=" min-h-screen flex items-center justify-center my-20">
       {showModal && (
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50">
           <div className="bg-white p-6 rounded-lg shadow-lg text-center">
@@ -51,12 +58,9 @@ const Signup = () => {
         </div>
       )}
 
-      {/* Signup Form */}
-      <div className="bg-[#fff1d1] p-8 rounded-lg w-full max-w-2xl shadow-md">
-       <div className="w-60 mx-auto">
-          <h2 className="bg-[#a6cd57] text-black text-center font-bold text-lg md:text-xl lg:text-2xl rounded-3xl py-2 mb-4">
-            SIGN UP
-          </h2>
+      <div className="relative bg-[#fff1d1] p-8 rounded-lg w-full max-w-2xl shadow-md">
+        <div className="absolute -top-6 left-1/2 -translate-x-1/2 px-20 py-2 bg-[#c8e76f] rounded-3xl text-sm md:text-base lg:text-4xl flex items-center justify-center font-bold text-black border border-[#a4d157]">
+          SIGNUP
         </div>
 
         <form onSubmit={handleSubmit} className="space-y-10">
@@ -89,7 +93,7 @@ const Signup = () => {
 
         <div className="text-center mt-4 text-sm md:text-base lg:text-lg">
           <Link to="/login" className="font-bold">LOGIN</Link> |{" "}
-          <Link to="#" className="font-bold">FORGOT PASSWORD</Link>
+          <Link to="/forgot-pass" className="font-bold">FORGOT PASSWORD</Link>
           <p className="text-gray-500 mt-2 text-xs md:text-sm lg:text-base">
             By Joining And Using Flover Theory Academy Platform, You Agree To Our <span className="underline">Terms & Policies</span>
           </p>

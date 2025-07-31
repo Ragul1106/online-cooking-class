@@ -1,7 +1,9 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import bgImage from '../assets/images/COURSES.png';
 
 const CourseCard = () => {
+  const navigate = useNavigate();
   const courseData = [
     {
       title: 'IMMUNITY BOOSTER RECIPES',
@@ -66,27 +68,27 @@ const CourseCard = () => {
               backgroundImage: `url(${bgImage})`,
             }}
           >
-            {/* Fixed layout wrapper */}
             <div className="flex flex-col h-full">
-              {/* Title with fixed height */}
+
               <h3 className="text-white font-bold text-xl uppercase mb-4 min-h-[64px] leading-snug">
                 {course.title}
               </h3>
 
-              {/* Description block with consistent start point */}
               <div className="rounded-xl p-4 text-black flex flex-col justify-start flex-grow min-h-[240px] mt-10">
-  <p className="text-md mb-3 px-4 md:px-8 text-center font-semibold">{course.description}</p>
-  <p className="font-bold px-4 md:px-8 text-center mt-2">{course.offer}</p>
- <div className="flex items-center gap-2 mt-2 justify-center">
-  <p className="line-through text-black/60 text-sm">₹{course.priceOld}</p>
-  <p className="text-lg font-semibold text-black">₹{course.priceNew}</p>
-</div>
+                <p className="text-md mb-3 px-4 md:px-8 text-center font-semibold">{course.description}</p>
+                <p className="font-bold px-4 md:px-8 text-center mt-2">{course.offer}</p>
+                <div className="flex items-center gap-2 mt-2 justify-center">
+                  <p className="line-through text-black/60 text-sm">₹{course.priceOld}</p>
+                  <p className="text-lg font-semibold text-black">₹{course.priceNew}</p>
+                </div>
 
-</div>
+              </div>
 
-            <button className="bg-[#C24B4B] text-white font-semibold py-1 px-5 rounded-full hover:opacity-90 w-fit mx-auto">
-  LEARN MORE
-</button>
+              <button 
+              onClick={() => navigate("/course-des")}
+              className="bg-[#C24B4B] text-white font-semibold py-1 px-5 rounded-full hover:opacity-90 w-fit mx-auto">
+                LEARN MORE
+              </button>
 
 
             </div>

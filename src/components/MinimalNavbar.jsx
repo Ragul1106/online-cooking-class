@@ -4,7 +4,7 @@ import { AiFillHome } from "react-icons/ai";
 import { BiFingerprint } from "react-icons/bi";
 import { MdPersonAddAlt1 } from "react-icons/md";
 import { Link } from "react-router-dom";
-import logo from "../assets/images/logo_img2.png"; // your image from the screenshot
+import logo from "../assets/images/logo_img2.png"; 
 
 export default function MinimalNavbar() {
   return (

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import {
   FaPhoneAlt,
   FaFacebookF,
@@ -11,14 +11,15 @@ import { MdEmail, MdLocationOn } from "react-icons/md";
 import logo1 from "../assets/images/logo_img1.png";
 import logo2 from "../assets/images/logo_img2.png";
 import { Link } from 'react-router-dom';
+import { DropdownContext } from "../context/DropdownContext";
 
 export default function Footer() {
   const [hovered, setHovered] = useState(false);
+  const { setIsDropdownOpen } = useContext(DropdownContext);
 
   return (
     <footer className="bg-[#D17963] text-white px-6 md:px-10 py-10">
       <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 text-sm md:text-base lg:text-lg">
-        {/* Logo Section */}
         <div className="flex justify-center md:justify-start lg:mt-10">
           <img
             src={hovered ? logo1 : logo2}
@@ -29,7 +30,6 @@ export default function Footer() {
           />
         </div>
 
-        {/* Navigation */}
         <div className="text-center md:text-left space-y-2 lg:ml-10">
           <h3 className="font-semibold text-white text-base lg:text-lg">
             HOME
@@ -41,7 +41,12 @@ export default function Footer() {
               </Link>
             </li>
             <li>
-              <Link to="/programs" className="hover:text-[#C3413B] transition">
+              <Link to="/?openServices=true"
+                onClick={() => {
+                  setIsDropdownOpen(true);
+                  window.scrollTo({ top: 0, behavior: "smooth" });
+                }}
+                className="hover:text-[#C3413B] transition">
                 PROGRAMS
               </Link>
             </li>

@@ -1,19 +1,20 @@
 import React, { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { FiPaperclip, FiUser } from 'react-icons/fi';
 import { BsEmojiSmile } from 'react-icons/bs';
 import defaultReplies from '../data/chatData';
 
 const CourseBanner = () => {
+  const navigate = useNavigate();
   const [isChatOpen, setIsChatOpen] = useState(false);
   const [input, setInput] = useState('');
-  const [replyIndex, setReplyIndex] = useState(1); // Start from second reply
+  const [replyIndex, setReplyIndex] = useState(1);
 
   const [messages, setMessages] = useState(() => {
     const saved = localStorage.getItem('chatMessages');
-    return saved ? JSON.parse(saved) : [defaultReplies[0]]; // Initial message only
+    return saved ? JSON.parse(saved) : [defaultReplies[0]];
   });
 
-  // Persist messages in localStorage
   useEffect(() => {
     localStorage.setItem('chatMessages', JSON.stringify(messages));
   }, [messages]);
@@ -23,18 +24,16 @@ const CourseBanner = () => {
   const handleSend = () => {
     if (input.trim() === '') return;
 
-    // Add user message
     const userMessage = { id: Date.now(), sender: 'You', text: input };
     setMessages(prev => [...prev, userMessage]);
     setInput('');
 
-    // Reply with next default after short delay
     if (replyIndex < defaultReplies.length) {
       const nextReply = defaultReplies[replyIndex];
       setTimeout(() => {
         setMessages(prev => [...prev, nextReply]);
         setReplyIndex(prev => prev + 1);
-      }, 1000); // Simulate bot typing delay
+      }, 1000);
     }
   };
 
@@ -49,13 +48,14 @@ const CourseBanner = () => {
         grandparents to moms, health conscious people or foodies – there’s a course for all.
       </p>
 
-      {/* Button and Chat Icon Row */}
       <div className="mt-8 w-full max-w-6xl flex items-center justify-center relative">
-        <button className="mx-auto bg-[#B94747] text-white font-semibold text-lg px-6 py-3 rounded-full hover:bg-[#a53d3d] transition">
+        <button
+          onClick={() => navigate("/courses")}
+          className="mx-auto block bg-[#b14444] hover:bg-[#962f2f] text-white font-semibold py-2 px-8 rounded-3xl transition duration-300 uppercase tracking-wide text-sm md:text-lg"
+        >
           VIEW COURSES
         </button>
 
-        {/* Chat Icon */}
         <div className="absolute right-0 cursor-pointer" onClick={toggleChat}>
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -69,11 +69,10 @@ const CourseBanner = () => {
         </div>
       </div>
 
-      {/* Chat Modal */}
       {isChatOpen && (
         <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50">
           <div className="bg-[#FFF2E9] rounded-xl shadow-xl w-[360px] h-[550px] max-w-full relative flex flex-col">
-            {/* Header with Icon & Inbox (Column) */}
+
             <div className="flex justify-between items-start px-4 py-3 border-b">
               <div className="flex flex-col items-start gap-1">
                 <FiUser className="text-2xl text-gray-700" />
@@ -87,7 +86,6 @@ const CourseBanner = () => {
               </button>
             </div>
 
-            {/* Messages Area */}
             <div className="flex-1 overflow-y-auto px-4 py-2 space-y-3">
               {messages.map(msg => (
                 <div key={msg.id} className="flex items-start text-sm">
@@ -101,7 +99,6 @@ const CourseBanner = () => {
               ))}
             </div>
 
-            {/* Input */}
             <div className="border-t px-4 py-3 flex items-center gap-2">
               <input
                 type="text"

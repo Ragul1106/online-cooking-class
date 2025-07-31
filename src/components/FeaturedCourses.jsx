@@ -1,4 +1,5 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import courseBg from "../assets/images/card.png";
 
 const courses = [
@@ -33,6 +34,7 @@ const courses = [
 ];
 
 export default function FeaturedCourses() {
+  const navigate = useNavigate();
   return (
     <div className="bg-[#FFF7F0] py-12 px-4 text-center">
       <h2 className="text-3xl md:text-4xl font-extrabold mb-10">FEATURED COURSES</h2>
@@ -50,7 +52,9 @@ export default function FeaturedCourses() {
               <p className="text-xl font-semibold mt-1">{course.price}</p>
             </div>
 
-            <button className="mt-1 bg-[#C8443A] text-white text-[15px] font-bold py-2 px-6 rounded-full hover:bg-red-700 transition mx-auto">
+            <button
+            onClick={() => navigate("/course-des")}
+             className="mt-1 bg-[#C8443A] text-white text-[15px] font-bold py-2 px-6 rounded-full hover:bg-red-700 transition mx-auto">
               LEARN MORE
             </button>
           </div>

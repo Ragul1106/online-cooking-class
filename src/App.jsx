@@ -2,42 +2,55 @@ import React from "react";
 import { BrowserRouter as Router, Routes, Route, useLocation } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
-import Home from "./pages/Home";
-import About from "./pages/About";
-// import Programs from "./pages/Programs";
-
-import Bakery from "./components/BakkeryBuisness";
-import CloudKitchen from "./components/Cloud_Kitchen";
-import Courses from "./pages/Courses";
-import Contact from "./pages/Contact";
+import Home from "./components/Home";
+import About from "./components/About";
+import Courses from "./components/Courses";
+import Contact from "./components/Contact";
 import Login from "./components/Login";
 import Signup from "./components/SignUp";
-import CourseDescription from "./components/CourseDescriptionPage";
-import MinimalNavbar from "./components/MinimalNavbar";
-import { Cloud } from "lucide-react";
+import ScrollToTop from "./components/ScrollToTop";
+import LoginNavbar from "./components/LoginNavbar";
+import BakeryPromo from "./components/BakkeryPromo";
+import CourseDescription from "./components/courseDescription";
+import EnrollmentForm from "./components/EnrollmentForm";
+import EnrollNavbar from "./components/EnrollNavbar";
+import CloudKitchen from "./components/CloudKitchen";
+import ForgetPassword from "./components/ForgetPassword";
+import EnrollSuccess from "./components/EnrollmentSuccess";
+import { DropdownProvider } from "./context/DropdownContext";
 
 function LayoutRoutes() {
   const location = useLocation();
-  const isAuthPage = ["/login", "/signup"].includes(location.pathname);
+  const isAuthPage = ["/login", "/signup", "/forgot-pass"].includes(location.pathname);
+  const isEnrollPage = ["/enroll", "/enrollsuccess"].includes(location.pathname);
 
   return (
     <>
-      {isAuthPage ? <MinimalNavbar /> : <Navbar />}
-      
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/about" element={<About />} />
-        {/* <Route path="/programs" element={<Programs />} /> */}
-        <Route path="/courseDescription" element={<CourseDescription />} />
-        <Route path="/cloud-kitchen" element={<CloudKitchen />} />
-        <Route path="/bakery" element={<Bakery />} />
-        <Route path="/courses" element={<Courses />} />
-        <Route path="/contact" element={<Contact />} />
-        <Route path="/login" element={<Login />} />
-        <Route path="/signup" element={<Signup />} />
-      </Routes>
-
-      <Footer />
+      <DropdownProvider>
+        <ScrollToTop />
+        {isAuthPage ? (
+          <LoginNavbar />
+        ) : isEnrollPage ? (
+          <EnrollNavbar />
+        ) : (
+          <Navbar />
+        )}
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/courses" element={<Courses />} />
+          <Route path="/contact" element={<Contact />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/signup" element={<Signup />} />
+          <Route path="/forgot-pass" element={<ForgetPassword />} />
+          <Route path="/bakery" element={<BakeryPromo />} />
+          <Route path="/cloud" element={<CloudKitchen />} />
+          <Route path="/course-des" element={<CourseDescription />} />
+          <Route path="/enroll" element={<EnrollmentForm />} />
+          <Route path="/enrollsuccess" element={<EnrollSuccess />} />
+        </Routes>
+        <Footer />
+      </DropdownProvider>
     </>
   );
 }
