@@ -1,7 +1,10 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useNavigate, Link, useLocation } from "react-router-dom";
 
 const Signup = () => {
+  useEffect(() => {
+          document.title = "Online Cooking Class | Sign Up";
+        }, []);
   const location = useLocation();
   const navigate = useNavigate();
 

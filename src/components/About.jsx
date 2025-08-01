@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import CookingPromo from './CookingPromo'
 import AboutUs from './AboutUs'
 import AboutSection from './AboutSection'
@@ -8,6 +8,9 @@ import CourseBanner from './CourseBanner'
 import OurValues from './OurValues'
 
 function About() {
+   useEffect(() => {
+      document.title = "Online Cooking Class | About Us";
+    }, []);
   return (
     <div className="min-h-screen bg-[#fff7f1] ">
         <CookingPromo />

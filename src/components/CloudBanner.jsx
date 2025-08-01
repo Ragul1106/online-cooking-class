@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import banner1Image from '../assets/images/banner1.png';
 import enrollNow from '../assets/images/enrollnow.png';
@@ -16,6 +16,9 @@ import expertise from '../assets/images/expertise.png';
 
 function BakeryBanner() {
     const navigate = useNavigate();
+     useEffect(() => {
+        document.title = "Online Cooking Class | Cloud Kitchen ";
+      }, []);
     return (
         <div>
             <p className="max-w-4xl text-3xl font-bold text-gray-800 mt-6">

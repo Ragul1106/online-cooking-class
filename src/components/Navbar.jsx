@@ -34,7 +34,7 @@ export default function Navbar() {
   }, [location, setIsDropdownOpen]);
 
   const toggleMobileMenu = () => setMobileMenuOpen(!mobileMenuOpen);
-  const closeMobileMenu = () => setMobileMenuOpen(false);
+  // const closeMobileMenu = () => setMobileMenuOpen(false);
 
   return (
     <nav className="bg-[#FFF5E1] px-4 sm:px-8 md:px-14 py-4 flex items-center justify-between flex-wrap">
@@ -74,13 +74,10 @@ export default function Navbar() {
           {isDropdownOpen && (
             <ul className="absolute left-0 top-full mt-2 bg-[#FFF5E1] shadow-md text-black p-4 space-y-2 w-56 z-30 text-base lg:text-xl">
               <li className="hover:font-semibold">
-                <Link to="/bakery" onClick={() => setIsDropdownOpen(false)}>BAKERY BUSINESS</Link>
-              </li>
-              <li className="font-normal text-black-400 cursor-not-allowed ">
-                ACCELERATOR PROGRAM
+                <Link to="/bakery" onClick={() => setIsDropdownOpen(false)}>BAKERY BUSINESS ACCELERATOR PROGRAM</Link>
               </li>
               <li className="hover:font-semibold">
-                <Link to="/cloud" onClick={() => setIsDropdownOpen(false)}>CLOUD KITCHEN</Link>
+                <Link to="/cloud" onClick={() => setIsDropdownOpen(false)}>CLOUD KITCHEN ACCELERATOR PROGRAM</Link>
               </li>
             </ul>
           )}

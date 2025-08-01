@@ -1,6 +1,9 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 
 function EnrollSuccess() {
+  useEffect(() => {
+          document.title = "Online Cooking Class | Enrollment Success";
+        }, []);
   return (
     <div className="flex flex-col items-center justify-center bg-[#fcf7f2] px-6 py-20 text-center">
   <h1 className="text-3xl md:text-4xl font-bold my-10 mx-[50px] lg:mx-[440px]">

@@ -1,7 +1,10 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useNavigate, Link } from "react-router-dom";
 
 const Login = () => {
+  useEffect(() => {
+          document.title = "Online Cooking Class | Login";
+        }, []);
   const [form, setForm] = useState({ email: "", password: "" });
   const [error, setError] = useState("");
   const [showModal, setShowModal] = useState(false);

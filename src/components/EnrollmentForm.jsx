@@ -1,7 +1,10 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 const EnrollmentForm = () => {
+    useEffect(() => {
+            document.title = "Online Cooking Class | Enrollment Form";
+          }, []);
     const [isNewAccount, setIsNewAccount] = useState(true);
     const [errors, setErrors] = useState({});
     const [coupon, setCoupon] = useState('');

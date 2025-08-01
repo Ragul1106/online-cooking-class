@@ -1,7 +1,10 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
 const ForgetPassword = () => {
+  useEffect(() => {
+          document.title = "Online Cooking Class | Forget Password";
+        }, []);
   const [email, setEmail] = useState("");
   const [showResetModal, setShowResetModal] = useState(false);
   const [newPassword, setNewPassword] = useState("");
