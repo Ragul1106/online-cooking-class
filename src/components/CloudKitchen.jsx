@@ -5,7 +5,7 @@ import CourseBanner from '../components/CourseBanner';
 
 const BakeryPromo = () => {
     return (
-        <div className="w-full flex flex-col items-center bg-white px-4 text-center">
+        <div className="w-full flex flex-col items-center bg-[#FFF5ED] px-4 text-center">
             <CloudBanner />
             <div className="relative w-full max-w-5xl mt-6">
                 <img

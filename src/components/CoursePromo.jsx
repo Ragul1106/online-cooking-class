@@ -6,7 +6,7 @@ export default function CoursePromo() {
   const navigate = useNavigate();
 
   return (
-    <div className="flex flex-col md:flex-row gap-6 md:gap-x-8 p-4 md:p-8 rounded-[30px] max-w-6xl mx-auto">
+    <div className="flex flex-col bg-[#FFF7F0] md:flex-row gap-8 md:gap-x-16 p-4 md:p-8 rounded-[30px] max-w-6xl mx-auto">
 
       <div className="w-full md:basis-[45%] overflow-hidden rounded-[30px]">
         <img
@@ -18,20 +18,17 @@ export default function CoursePromo() {
 
       <div className="w-full md:basis-[65%] flex items-stretch relative rounded-[20px]">
 
-        <div className="relative flex w-full bg-white rounded-[20px] overflow-hidden ">
+        <div className="relative flex w-full bg-white border-2 border-[#A7C957] rounded-[20px] overflow-hidden ">
 
-          <div
-            className="hidden md:block absolute top-0 left-0 h-full w-10 bg-lime-500 z-10"
-            style={{
-              clipPath: "polygon(100% 0%, 10% 100%, 0% 0%)"
-            }}
+           <div
+            className="hidden md:block absolute top-0 left-0 h-full w-[60px] bg-[#A7C957]  z-20"
+            style={{ clipPath: "polygon(80% 0, 0 175%, 0 0)" }}
           />
 
+          {/* Right Bar */}
           <div
-            className="hidden md:block absolute top-0 right-0 h-full w-10 bg-lime-500 z-10"
-            style={{
-              clipPath: "polygon(100% 0%, 100% 100%, 0% 100%)"
-            }}
+              className="hidden md:block absolute top-0 right-0 h-full w-[60px] bg-[#A7C957] z-20"
+            style={{ clipPath: "polygon(60% 0, 30% 100%, 10000% 110%)" }}
           />
 
           <div className="flex-1 relative z-10 p-6 md:p-10">

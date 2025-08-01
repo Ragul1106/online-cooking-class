@@ -7,7 +7,6 @@ const CookingPromo = () => {
 
   return (
     <div className="flex flex-col md:flex-row items-stretch justify-center p-6 md:p-12 gap-6 max-w-6xl mx-auto">
-      {/* Left Column */}
       <div className="flex-1 max-w-lg h-auto md:h-auto lg:h-[300px] flex flex-col justify-center bg-gradient-to-b from-[#c5df9b] to-white rounded-2xl shadow-md p-6 text-center">
         <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-black mb-4 leading-snug">
           MORE POWER TO YOUR COOKING!<br />THROUGH LEARNING
@@ -27,7 +26,6 @@ const CookingPromo = () => {
         </div>
       </div>
 
-      {/* Right Column - Image */}
       <div className="flex-1 max-w-sm h-auto md:h-auto lg:h-[300px] flex items-center">
         <img
           src={chefImage}

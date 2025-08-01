@@ -8,7 +8,7 @@ import Faq from "./Faq";
 
 function Home() {
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen bg-[#FFF7F0]">
       <CoursePromo />
       <FeaturedCourses />
       <OfferBanner />

@@ -63,13 +63,16 @@ export default function Navbar() {
         <li className="relative cursor-pointer ">
           <div
             className="flex items-center"
-            onClick={() => setIsDropdownOpen(!isDropdownOpen)}
+            onClick={() => {
+              setIsDropdownOpen(!isDropdownOpen);
+              setShowCourses(false); 
+            }}
           >
             <span>PROGRAMS</span> <span className="ml-1">▼</span>
           </div>
 
           {isDropdownOpen && (
-            <ul className="absolute left-0 top-full mt-2 bg-[#FFF5E1] shadow-md text-black p-4 space-y-2 w-56 z-20 text-base lg:text-xl">
+            <ul className="absolute left-0 top-full mt-2 bg-[#FFF5E1] shadow-md text-black p-4 space-y-2 w-56 z-30 text-base lg:text-xl">
               <li className="hover:font-semibold">
                 <Link to="/bakery" onClick={() => setIsDropdownOpen(false)}>BAKERY BUSINESS</Link>
               </li>
@@ -86,12 +89,44 @@ export default function Navbar() {
 
         <li
           className="relative cursor-pointer"
-          onMouseEnter={() => setShowCourses(true)}
-          onMouseLeave={() => setShowCourses(false)}
+          onClick={() => {
+            setShowCourses(!showCourses);
+            setIsDropdownOpen(false);
+          }}
+
         >
           <div className="flex items-center">
-            <Link to="/courses">COURSES</Link> <span className="ml-1">▼</span>
+            <span>COURSES</span> <span className="ml-1">▼</span>
           </div>
+
+          {showCourses && (
+            <ul className="absolute left-0 top-full mt-2 bg-[#FFF5E1] shadow-md text-black p-4 space-y-2 w-[300px] z-20 text-sm lg:text-base font-semibold">
+              <li className="hover:text-[#BF4444] cursor-pointer">
+                <Link to="/courses">THE GOOD GUT PROGRAM</Link>
+              </li>
+              <li className="hover:text-[#BF4444] cursor-pointer">
+                <Link to="/courses">FOOD LOOK GOOD</Link>
+              </li>
+              <li className="hover:text-[#BF4444] cursor-pointer">
+                <Link to="/courses">START YOUR BUSINESS FROM HOME – NON VEG & VEG</Link>
+              </li>
+              <li className="hover:text-[#BF4444] cursor-pointer">
+                <Link to="/courses">START YOUR FOOD BUSINESS FROM HOME – VEG ONLY</Link>
+              </li>
+              <li className="hover:text-[#BF4444] cursor-pointer">
+                <Link to="/courses">IMMUNITY BOOSTER RECIPES</Link>
+              </li>
+              <li className="hover:text-[#BF4444] cursor-pointer">
+                <Link to="/courses">INDIA’S FAVOURITES: RESTAURANTS AND HOME STYLE DISHES</Link>
+              </li>
+              <li className="hover:text-[#BF4444] cursor-pointer">
+                <Link to="/courses">VEGETARIAN’S DELIGHT</Link>
+              </li>
+              <li className="hover:text-[#BF4444] cursor-pointer">
+                <Link to="/courses">GARNISHING & PLATING</Link>
+              </li>
+            </ul>
+          )}
         </li>
 
         <li className="hover:opacity-70 cursor-pointer"><Link to="/contact">CONTACT</Link></li>
@@ -175,9 +210,23 @@ export default function Navbar() {
                 onClick={() => setShowCourses(!showCourses)}
                 className="flex items-center justify-between w-full"
               >
-                <Link to="/courses">COURSES</Link> <span className="ml-2">▼</span>
+                <span>COURSES</span> <span className="ml-2">▼</span>
               </button>
+
+              {showCourses && (
+                <div className="mt-2 pl-4 text-sm font-medium space-y-1 text-[#edd6c5]">
+                  <p>THE GOOD GUT PROGRAM</p>
+                  <p>FOOD LOOK GOOD</p>
+                  <p>START YOUR BUSINESS FROM HOME – NON VEG & VEG</p>
+                  <p>START YOUR FOOD BUSINESS FROM HOME – VEG ONLY</p>
+                  <p>IMMUNITY BOOSTER RECIPES</p>
+                  <p>INDIA’S FAVOURITES: RESTAURANTS AND HOME STYLE DISHES</p>
+                  <p>VEGETARIAN’S DELIGHT</p>
+                  <p>GARNISHING & PLATING</p>
+                </div>
+              )}
             </div>
+
 
             <span className="hover:opacity-70"><Link to="/contact">CONTACT</Link></span>
           </div>
