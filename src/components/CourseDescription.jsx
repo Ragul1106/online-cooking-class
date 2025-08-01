@@ -4,19 +4,25 @@ import CourseCurriculum from '../components/CourseCurriculum';
 import Testimonials from '../components/Testimonials';
 import CourseBanner from '../components/CourseBanner';
 import RecipeCard from '../components/RecipeCard';
-import FeaturesCard from '../components/FeaturesCard';
+import bannerImage from '../assets/images/bakkery2.png';
 
 const CourseDescription = () => {
     useEffect(() => {
-            document.title = "Online Cooking Class | Course Description";
-          }, []);
+        document.title = "Online Cooking Class | Course Description";
+    }, []);
     return (
         <div className="w-full flex flex-col items-center bg-[#fff7f0] px-4 text-center">
             <CourseDesBanner />
             <CourseCurriculum />
             <RecipeCard />
             <Testimonials />
-            <FeaturesCard />
+            <div className="relative w-full max-w-5xl mt-6">
+                <img
+                    src={bannerImage}
+                    alt="Bakery Banner"
+                    className="w-full rounded-xl object-cover"
+                />
+            </div>
             <CourseBanner />
 
         </div>

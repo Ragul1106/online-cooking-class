@@ -14,8 +14,8 @@ function Home() {
     <div className="min-h-screen bg-[#FFF7F0]">
       <CoursePromo />
       <FeaturedCourses />
-      <OfferBanner />
       <CourseCard />
+      <OfferBanner />
       <Faq />
       <CourseBanner />
     </div>

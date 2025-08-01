@@ -1,7 +1,6 @@
 import React, { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import banner1Image from '../assets/images/banner1.png';
-import enrollNow from '../assets/images/enrollnow.png';
 import text1 from '../assets/images/firsttext.png';
 import cheffimg from '../assets/images/Group 48.png';
 
@@ -16,9 +15,9 @@ import expertise from '../assets/images/expertise.png';
 
 function BakeryBanner() {
     const navigate = useNavigate();
-     useEffect(() => {
+    useEffect(() => {
         document.title = "Online Cooking Class | Bakery Business ";
-      }, []);
+    }, []);
     return (
         <div>
             <p className="max-w-4xl text-3xl font-bold text-gray-800 mt-6">
@@ -74,9 +73,9 @@ function BakeryBanner() {
                 </div>
 
                 <button
-                onClick={() => navigate('/enroll')}
-                 className="absolute left-20 md:left-56 lg:left-56 bottom-[320px] md:bottom-[160px] lg:bottom-32 z-20">
-                    <img src={enrollNow} className="w-34  md:w-28 lg:w-48" alt="Enroll Now" />
+                    onClick={() => navigate('/enroll')}
+                    className="absolute left-56 md:left-56 lg:left-56 bottom-[320px] md:bottom-[160px] lg:bottom-32 bg-[#ca5555] hover:bg-[#d57a66] hover:text-red-300 text-white text-[11px] z-20 sm:text-sm md:text-lg lg:text-2xl font-semibold py-4 sm:py-1 md:py-1 px-4 sm:px-4 md:px-8 rounded-full">
+                    ENROLL NOW
                 </button>
 
 

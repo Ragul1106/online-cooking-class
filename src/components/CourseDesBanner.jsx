@@ -45,7 +45,7 @@ function CourseDesBanner() {
 
           <button 
           onClick={() => navigate('/enroll')}
-          className="bg-rose-800 hover:bg-red-600 text-white text-[11px] sm:text-sm md:text-lg lg:text-2xl font-semibold py-1 sm:py-2 md:py-3 px-4 sm:px-6 md:px-8 rounded-full">
+          className="bg-[#ca5555] hover:bg-[#d57a66] hover:text-red-300 text-white text-[11px] sm:text-sm md:text-lg lg:text-2xl font-semibold py-1 sm:py-2 md:py-3 px-4 sm:px-6 md:px-8 rounded-full">
             ENROLL NOW
           </button>
 

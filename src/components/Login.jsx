@@ -3,37 +3,37 @@ import { useNavigate, Link } from "react-router-dom";
 
 const Login = () => {
   useEffect(() => {
-          document.title = "Online Cooking Class | Login";
-        }, []);
+    document.title = "Online Cooking Class | Login";
+  }, []);
   const [form, setForm] = useState({ email: "", password: "" });
   const [error, setError] = useState("");
   const [showModal, setShowModal] = useState(false);
   const navigate = useNavigate();
 
- const handleSubmit = (e) => {
-  e.preventDefault();
-  const users = JSON.parse(localStorage.getItem("users")) || [];
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    const users = JSON.parse(localStorage.getItem("users")) || [];
 
-  const user = users.find(
-    (u) => u.email === form.email && u.password === form.password
-  );
+    const user = users.find(
+      (u) => u.email === form.email && u.password === form.password
+    );
 
-  if (!user) {
-    setError("Credentials not available. Redirecting to Sign Up...");
+    if (!user) {
+      setError("Credentials not available. Redirecting to Sign Up...");
+      setTimeout(() => {
+        navigate("/signup", { state: form });
+      }, 2000);
+      return;
+    }
+
+    localStorage.setItem("loggedInUser", JSON.stringify(user));
+    setShowModal(true);
+
     setTimeout(() => {
-      navigate("/signup", { state: form });
+      setShowModal(false);
+      navigate("/");
     }, 2000);
-    return;
-  }
-
-  localStorage.setItem("loggedInUser", JSON.stringify(user));
-  setShowModal(true);
-
-  setTimeout(() => {
-    setShowModal(false);
-    navigate("/");
-  }, 2000);
-};
+  };
 
   const handleChange = (e) => {
     setForm({ ...form, [e.target.name]: e.target.value });

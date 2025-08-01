@@ -29,7 +29,7 @@ export default function OfferBanner() {
         </div>
         <button
           onClick={() => navigate("/course-des")}
-          className="absolute left-1/2 transform -translate-x-1/2 bottom-6 bg-[#D66567] hover:bg-[#bb4a4c] text-white font-semibold py-2 px-5 rounded-full transition duration-300">
+          className="absolute left-1/2 transform -translate-x-1/2 bottom-6 bg-[#b14444] hover:bg-[#d57a66] hover:text-red-300 text-white font-semibold py-2 px-5 rounded-full transition duration-300">
           LEARN MORE
         </button>
       </div>

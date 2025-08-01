@@ -54,7 +54,7 @@ export default function FeaturedCourses() {
 
             <button
             onClick={() => navigate("/course-des")}
-             className="mt-1 bg-[#C8443A] text-white text-[15px] font-bold py-2 px-6 rounded-full hover:bg-red-700 transition mx-auto">
+             className="mt-1 bg-[#ca5555] hover:bg-[#d57a66] hover:text-red-300 text-white text-[15px] font-bold py-2 px-6 rounded-full  transition mx-auto">
               LEARN MORE
             </button>
           </div>

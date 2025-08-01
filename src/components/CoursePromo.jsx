@@ -25,7 +25,6 @@ export default function CoursePromo() {
             style={{ clipPath: "polygon(80% 0, 0 175%, 0 0)" }}
           />
 
-          {/* Right Bar */}
           <div
               className="hidden md:block absolute top-0 right-0 h-full w-[60px] bg-[#A7C957] z-20"
             style={{ clipPath: "polygon(60% 0, 30% 100%, 10000% 110%)" }}
@@ -43,7 +42,7 @@ export default function CoursePromo() {
             <div className="w-full">
               <button
                 onClick={() => navigate("/courses")}
-                className="mx-auto block bg-[#b14444] hover:bg-[#962f2f] text-white font-semibold py-2 px-8 rounded-3xl transition duration-300 uppercase tracking-wide text-sm md:text-lg"
+                className="mx-auto block bg-[#b14444] hover:bg-[#d57a66] hover:text-red-300 text-white font-semibold py-2 px-8 rounded-3xl transition duration-300 uppercase tracking-wide text-sm md:text-lg"
               >
                 View Courses
               </button>

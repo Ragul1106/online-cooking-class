@@ -51,7 +51,7 @@ const CourseBanner = () => {
       <div className="mt-8 w-full max-w-6xl flex items-center justify-center relative">
         <button
           onClick={() => navigate("/courses")}
-          className="mx-auto block bg-[#b14444] hover:bg-[#962f2f] text-white font-semibold py-2 px-8 rounded-3xl transition duration-300 uppercase tracking-wide text-sm md:text-lg"
+          className="mx-auto block bg-[#b14444] hover:bg-[#d57a66] hover:text-red-300 text-white font-semibold py-2 px-8 rounded-3xl transition duration-300 uppercase tracking-wide text-sm md:text-lg"
         >
           VIEW COURSES
         </button>

@@ -58,7 +58,6 @@ export default function Footer() {
           </ul>
         </div>
 
-        {/* Courses */}
         <div className="text-center md:text-left space-y-2 lg:-ml-[120px]">
           <h3 className="font-semibold text-white text-base lg:text-lg">
             COURSES
@@ -75,13 +74,12 @@ export default function Footer() {
           </ul>
         </div>
 
-        {/* Contact */}
-        <div className="text-center md:text-left space-y-4 lg:ml-20">
-          <h3 className="font-semibold text-white text-base lg:text-lg">
+        <div className="text-center md:text-left space-y-2 lg:ml-20">
+          <h3 className="font-semibold text-white  text-base lg:text-lg">
             CONTACT
           </h3>
 
-          <div className="flex items-start gap-2 justify-center md:justify-start">
+          <div className="flex items-start gap-2 mb-5 justify-center md:justify-start">
             <MdLocationOn className="text-xl mt-1" />
             <p>
               Flavortheory Academy

@@ -19,7 +19,7 @@ const CookingPromo = () => {
         <div className="mt-auto">
           <button
             onClick={() => navigate("/courses")}
-            className="bg-[#b14444] text-white px-5 py-2 rounded-full font-semibold hover:bg-[#962f2f] transition duration-300"
+            className="bg-[#b14444] hover:bg-[#d57a66] hover:text-red-300 text-white px-5 py-2 rounded-full font-semibold  transition duration-300"
           >
             VIEW COURSES
           </button>
