@@ -86,7 +86,7 @@ const CourseCard = () => {
 
               <button 
               onClick={() => navigate("/course-des")}
-              className="bg-[#C24B4B] text-white font-semibold py-1 px-5 rounded-full hover:opacity-90 w-fit mx-auto">
+              className="bg-[#ca5555] hover:bg-[#d57a66] hover:text-red-300 text-white font-semibold py-1 px-5 rounded-full  w-fit mx-auto">
                 LEARN MORE
               </button>
 

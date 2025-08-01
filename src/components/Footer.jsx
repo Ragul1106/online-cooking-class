@@ -5,7 +5,6 @@ import {
   FaInstagram,
   FaGoogle,
   FaYoutube,
-  FaEnvelope,
 } from "react-icons/fa";
 import { MdEmail, MdLocationOn } from "react-icons/md";
 import logo1 from "../assets/images/logo_img1.png";
@@ -18,7 +17,7 @@ export default function Footer() {
   const { setIsDropdownOpen } = useContext(DropdownContext);
 
   return (
-    <footer className="bg-[#D17963] text-white px-6 md:px-10 py-10">
+    <footer className="bg-[#d57a66] text-white px-6 md:px-10 py-10">
       <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 text-sm md:text-base lg:text-lg">
         <div className="flex justify-center md:justify-start lg:mt-10">
           <img
@@ -74,42 +73,43 @@ export default function Footer() {
           </ul>
         </div>
 
-        <div className="text-center md:text-left space-y-2 lg:ml-20">
-          <h3 className="font-semibold text-white  text-base lg:text-lg">
-            CONTACT
-          </h3>
 
-          <div className="flex items-start gap-2 mb-5 justify-center md:justify-start">
-            <MdLocationOn className="text-xl mt-1" />
-            <p>
-              Flavortheory Academy
-              <br />
-              1234, Olive Street,
-              <br />
-              Chennai – 021
-            </p>
-          </div>
 
-          <div className="flex items-center gap-2 justify-center md:justify-start">
-            <FaEnvelope className="text-xl" />
-            <p>Info@Flavortheoryacademy.in</p>
-          </div>
 
-          <div className="flex items-center gap-2 justify-center md:justify-start">
-            <FaPhoneAlt className="text-xl" />
-            <p>044 – 987 6785 5677</p>
-          </div>
+        <div className="text-center md:text-left space-y-2">
+          <h3 className="font-semibold">CONTACT</h3>
 
-          <div>
-            <h4 className="font-semibold mt-3">FOLLOW US</h4>
-            <div className="flex gap-4 justify-center md:justify-start mt-2 text-xl">
-              <FaInstagram className="hover:text-black cursor-pointer" />
-              <FaGoogle className="hover:text-black cursor-pointer" />
-              <FaFacebookF className="hover:text-black cursor-pointer" />
-              <FaYoutube className="hover:text-black cursor-pointer" />
-            </div>
-          </div>
-        </div>
+           <div className="flex items-start gap-2 justify-center md:justify-start">
+             <MdLocationOn className="text-xl mt-1" />
+             <p>
+               Flavortheory Academy<br />
+               1234, Olive Street,<br />
+               Chennai – 021
+             </p>
+           </div>
+
+           <div className="flex items-center gap-2 justify-center md:justify-start">
+             <MdEmail className="text-xl" />
+             <p>Info@Flavortheoryacademy.in</p>
+           </div>
+
+           <div className="flex items-center gap-2 justify-center md:justify-start">
+             <FaPhoneAlt className="text-xl" />
+             <p>044 – 987 6785 5677</p>
+           </div>
+
+           <div>
+             <h4 className="font-semibold mt-2">FOLLOW US</h4>
+             <div className="flex gap-4 justify-center md:justify-start mt-2 text-xl">
+               <FaInstagram className="hover:text-black cursor-pointer" />
+               <FaGoogle className="hover:text-black cursor-pointer" />
+               <FaFacebookF className="hover:text-black cursor-pointer" />
+               <FaYoutube className="hover:text-black cursor-pointer" />
+             </div>
+           </div>
+         </div>
+
+
       </div>
     </footer>
   );
