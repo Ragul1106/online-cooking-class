@@ -109,7 +109,9 @@ const EnrollmentForm = () => {
                                         CREATE A NEW ACCOUNT
                                     </button>
                                     <span className="text-gray-500">OR</span>
-                                    <button type="button" className="underline text-left text-black">
+                                    <button type="button"
+                                            onClick={() => navigate('/forgot-pass')}
+                                     className="underline text-left text-black">
                                         FORGET PASSWORD?
                                     </button>
                                 </>

@@ -65,9 +65,9 @@ function BakeryBanner() {
                     </p>
                 </div>
 
-                <div className="absolute text-3xl left-20 md:left-32 top-[30rem] md:top-[28rem] text-white font-bold md:text-sm lg:text-lg z-10">
-                    Program Fees: ₹ 1 Lakh | INR <br />
-                    <span className="text-white-300 text-xl sm:text-4xl">36,000/-</span>
+                <div className="absolute text-3xl left-20 md:left-32 top-[30rem] md:top-[28rem] text-white font-bold md:text-2xl lg:text-2xl z-10">
+                    Program Fees: ₹ 80000 | INR 
+                    <span className="text-white-300 text-xl sm:text-3xl"> 28,000/-</span>
                 </div>
 
                 <button 

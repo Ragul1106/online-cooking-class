@@ -42,7 +42,7 @@ const CourseBanner = () => {
   };
 
   return (
-    <div className="bg-[#FFF9F5] py-10 flex flex-col items-center justify-center px-4 text-center relative">
+    <div className="bg-[#FFF5ED] py-10 flex flex-col items-center justify-center px-4 text-center relative">
       <p className="text-[28px] md:text-[36px] font-semibold text-black leading-relaxed max-w-6xl">
         Homemakers to busy executives, budding chefs to food entrepreneurs,
         grandparents to moms, health conscious people or foodies – there’s a course for all.
