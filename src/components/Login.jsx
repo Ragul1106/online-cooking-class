@@ -11,29 +11,42 @@ const Login = () => {
   const navigate = useNavigate();
 
   const handleSubmit = (e) => {
-    e.preventDefault();
-    const users = JSON.parse(localStorage.getItem("users")) || [];
+  e.preventDefault();
+  const { email, password } = form;
 
-    const user = users.find(
-      (u) => u.email === form.email && u.password === form.password
-    );
+  if (!email || !password) {
+    setError("Please fill in both email and password");
+    return;
+  }
+   const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  if (!emailRegex.test(email)) {
+    setError("Please enter a valid email address");
+    return;
+  }
 
-    if (!user) {
-      setError("Credentials not available. Redirecting to Sign Up...");
-      setTimeout(() => {
-        navigate("/signup", { state: form });
-      }, 2000);
-      return;
-    }
+  const users = JSON.parse(localStorage.getItem("users")) || [];
 
-    localStorage.setItem("loggedInUser", JSON.stringify(user));
-    setShowModal(true);
+  const user = users.find(
+    (u) => u.email === email && u.password === password
+  );
 
+  if (!user) {
+    setError("Credentials not available. Redirecting to Sign Up...");
     setTimeout(() => {
-      setShowModal(false);
-      navigate("/");
+      navigate("/signup", { state: form });
     }, 2000);
-  };
+    return;
+  }
+
+  localStorage.setItem("loggedInUser", JSON.stringify(user));
+  setShowModal(true);
+
+  setTimeout(() => {
+    setShowModal(false);
+    navigate("/");
+  }, 2000);
+};
+
 
   const handleChange = (e) => {
     setForm({ ...form, [e.target.name]: e.target.value });

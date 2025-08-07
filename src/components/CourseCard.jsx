@@ -81,7 +81,6 @@ const CourseCard = () => {
                   <p className="line-through text-black/60 text-sm">₹{course.priceOld}</p>
                   <p className="text-lg font-semibold text-black">₹{course.priceNew}</p>
                 </div>
-
               </div>
 
               <button 
@@ -89,8 +88,6 @@ const CourseCard = () => {
               className="bg-[#ca5555] hover:bg-[#d57a66] hover:text-red-300 text-white font-semibold py-1 px-5 rounded-full  w-fit mx-auto">
                 LEARN MORE
               </button>
-
-
             </div>
           </div>
         ))}

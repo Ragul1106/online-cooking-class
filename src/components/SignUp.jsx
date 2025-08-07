@@ -3,8 +3,8 @@ import { useNavigate, Link, useLocation } from "react-router-dom";
 
 const Signup = () => {
   useEffect(() => {
-          document.title = "Online Cooking Class | Sign Up";
-        }, []);
+    document.title = "Online Cooking Class | Sign Up";
+  }, []);
   const location = useLocation();
   const navigate = useNavigate();
 
@@ -19,31 +19,50 @@ const Signup = () => {
   const [showModal, setShowModal] = useState(false);
 
   const handleSubmit = (e) => {
-    e.preventDefault();
-    const { name, email, password, mobile } = form;
+  e.preventDefault();
+  const { name, email, password, mobile } = form;
 
-    if (!name || !email || !password || !mobile) {
-      setError("All fields are required");
-      return;
-    }
+  if (!name || !email || !password || !mobile) {
+    setError("All fields are required");
+    return;
+  }
 
-    const users = JSON.parse(localStorage.getItem("users")) || [];
-    const existingUser = users.find((u) => u.email === email);
-    if (existingUser) {
-      setError("User already exists!");
-      return;
-    }
+  const nameRegex = /^[A-Za-z\s]+$/;
+  if (!nameRegex.test(name)) {
+    setError("Name should contain only letters and spaces");
+    return;
+  }
 
-    users.push(form);
-    localStorage.setItem("users", JSON.stringify(users));
-    localStorage.setItem("loggedInUser", JSON.stringify(form));
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  if (!emailRegex.test(email)) {
+    setError("Please enter a valid email address");
+    return;
+  }
 
-    setShowModal(true);
-    setTimeout(() => {
-      setShowModal(false);
-      navigate("/"); // Auto-redirect to homepage
-    }, 2000);
-  };
+  const mobileRegex = /^\d{10}$/;
+  if (!mobileRegex.test(mobile)) {
+    setError("Mobile number must be exactly 10 digits and contain only numbers");
+    return;
+  }
+
+  const users = JSON.parse(localStorage.getItem("users")) || [];
+  const existingUser = users.find((u) => u.email === email);
+  if (existingUser) {
+    setError("User already exists!");
+    return;
+  }
+
+  users.push(form);
+  localStorage.setItem("users", JSON.stringify(users));
+  localStorage.setItem("loggedInUser", JSON.stringify(form));
+
+  setShowModal(true);
+  setTimeout(() => {
+    setShowModal(false);
+    navigate("/");
+  }, 2000);
+};
+
 
   const handleChange = (e) => {
     setForm({ ...form, [e.target.name]: e.target.value });

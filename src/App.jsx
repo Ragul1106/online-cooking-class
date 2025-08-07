@@ -18,6 +18,8 @@ import CloudKitchen from "./components/CloudKitchen";
 import ForgetPassword from "./components/ForgetPassword";
 import EnrollSuccess from "./components/EnrollmentSuccess";
 import { DropdownProvider } from "./context/DropdownContext";
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 function LayoutRoutes() {
   const location = useLocation();
@@ -51,6 +53,7 @@ function LayoutRoutes() {
         </Routes>
         <Footer />
       </DropdownProvider>
+      <ToastContainer position="top-center" autoClose={3000} />
     </>
   );
 }
